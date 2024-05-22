@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caderno de Exercícios</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #343a40;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .sidebar h2 {
+    margin-top: 0;
+    color: #fff;
+  }
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .sidebar li {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: justify;
+  }
+
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+
+  form {
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #343a40; /* Mesma cor do fundo da coluna 1 */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+  }
+
+  button:hover {
+    background-color: #23272b;
+  }
+
+  /* Estilos para o modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-content h2 {
+    margin-top: 0;
+  }
+
+  .modal-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .modal-content li {
+    margin-bottom: 5px;
+  }
+
+  .modal-content button {
+    padding: 8px 15px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  .modal-content button:hover {
+    background-color: #23272b;
+  }
+
+  /* Media queries para responsividade */
+  @media screen and (max-width: 600px) {
+    .container {
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .sidebar {
+      width: 100%;
+      max-width: none;
+      margin-bottom: 20px;
+    }
+
+    .main-content {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Conteúdo principal -->
+  <div class="main-content" id="main-content">
+    <h1>Caderno de Exercícios</h1>
+    <form id="exercises-form">      
+      <p>1. Qual corrente filosófica da tecnologia defende a ideia de que a tecnologia deve ser usada para transcender as limitações humanas e alcançar uma forma superior de existência?</p>
+      <label>
+        <input type="radio" name="q1" value="a"> a) Cyberpunk
+      </label>
+      <label>
+        <input type="radio" name="q1" value="b"> b) Transhumanismo
+      </label>
+      <label>
+        <input type="radio" name="q1" value="c"> c) Tecnofeminismo
+      </label>
+      <label>
+        <input type="radio" name="q1" value="d"> d) Neo-Luddismo
+      </label>
+      <label>
+        <input type="radio" name="q1" value="e"> e) Cibernética
+      </label>
+
+      <p>2. Qual corrente filosófica da tecnologia enfatiza a importância da privacidade e da criptografia para proteger as liberdades individuais na era digital?</p>
+      <label>
+        <input type="radio" name="q2" value="a"> a) Cypherpunk
+      </label>
+      <label>
+        <input type="radio" name="q2" value="b"> b) Biohacking
+      </label>
+      <label>
+        <input type="radio" name="q2" value="c"> c) Ludologia (Teoria dos Jogos)
+      </label>
+      <label>
+        <input type="radio" name="q2" value="d"> d) Anarquismo Digital
+      </label>
+      <label>
+        <input type="radio" name="q2" value="e"> e) Technogaianismo
+      </label>
+
+      <p>3. Qual corrente filosófica da tecnologia argumenta que a informação é a entidade central na sociedade e na evolução humana, e que devemos buscar maneiras de processá-la de forma eficiente?</p>
+      <label>
+        <input type="radio" name="q3" value="a"> a) Dataísmo
+      </label>
+      <label>
+        <input type="radio" name="q3" value="b"> b) Ludologia (Teoria dos Jogos)
+      </label>
+      <label>
+        <input type="radio" name="q3" value="c"> c) Tecnofeminismo
+      </label>
+      <label>
+        <input type="radio" name="q3" value="d"> d) Cibernética
+      </label>
+      <label>
+        <input type="radio" name="q3" value="e"> e) Singularidade Tecnológica
+      </label>
+
+      <p>4. Qual corrente filosófica da tecnologia busca promover a igualdade de gênero e questionar a relação entre gênero e tecnologia?</p>
+      <label>
+        <input type="radio" name="q4" value="a"> a) Cyberpunk
+      </label>
+      <label>
+        <input type="radio" name="q4" value="b"> b) Tecnofeminismo
+      </label>
+      <label>
+        <input type="radio" name="q4" value="c"> c) Anarquismo Digital
+      </label>
+      <label>
+        <input type="radio" name="q4" value="d"> d) Neo-Luddismo
+      </label>
+      <label>
+        <input type="radio" name="q4" value="e"> e) Technogaianismo
+      </label>
+
+      <p>5. Qual corrente filosófica da tecnologia se opõe ao avanço descontrolado da tecnologia e defende a preservação de valores humanos tradicionais?</p>
+      <label>
+        <input type="radio" name="q5" value="a"> a) Biohacking
+      </label>
+      <label>
+        <input type="radio" name="q5" value="b"> b) Ludologia (Teoria dos Jogos)
+      </label>
+      <label>
+        <input type="radio" name="q5" value="c"> c) Neo-Luddismo
+      </label>
+      <label>
+        <input type="radio" name="q5" value="d"> d) Technogaianismo
+      </label>
+      <label>
+        <input type="radio" name="q5" value="e"> e) Singularidade Tecnológica
+      </label>
+
+      <p>6. Qual corrente filosófica da tecnologia enfatiza a interação entre humanos e máquinas, buscando entender os sistemas complexos de retroalimentação?</p>
+      <label>
+        <input type="radio" name="q6" value="a"> a) Dataísmo
+      </label>
+      <label>
+        <input type="radio" name="q6" value="b"> b) Cibernética
+      </label>
+      <label>
+        <input type="radio" name="q6" value="c"> c) Cypherpunk
+      </label>
+      <label>
+        <input type="radio" name="q6" value="d"> d) Biohacking
+      </label>
+      <label>
+        <input type="radio" name="q6" value="e"> e) Singularidade Tecnológica
+      </label>
+
+      <p>7. Qual corrente filosófica da tecnologia defende a fusão entre tecnologia e ecologia, buscando soluções tecnológicas para os problemas ambientais?</p>
+      <label>
+        <input type="radio" name="q7" value="a"> a) Transhumanismo
+      </label>
+      <label>
+        <input type="radio" name="q7" value="b"> b) Tecnofeminismo
+      </label>
+      <label>
+        <input type="radio" name="q7" value="c"> c) Technogaianismo
+      </label>
+      <label>
+        <input type="radio" name="q7" value="d"> d) Ludologia (Teoria dos Jogos)
+      </label>
+      <label>
+        <input type="radio" name="q7" value="e"> e) Anarquismo Digital
+      </label>
+
+      <p>8. Qual corrente filosófica da tecnologia enfatiza a importância dos jogos na compreensão da interação humana e na resolução de conflitos?</p>
+      <label>
+        <input type="radio" name="q8" value="a"> a) Cyberpunk
+      </label>
+      <label>
+        <input type="radio" name="q8" value="b"> b) Biohacking
+      </label>
+      <label>
+        <input type="radio" name="q8" value="c"> c) Ludologia (Teoria dos Jogos)
+      </label>
+      <label>
+        <input type="radio" name="q8" value="d"> d) Anarquismo Digital
+      </label>
+      <label>
+        <input type="radio" name="q8" value="e"> e) Singularidade Tecnológica
+      </label>
+
+      <p>9. Qual corrente filosófica da tecnologia acredita na criação de sociedades descentralizadas e na autonomia individual por meio da tecnologia?</p>
+      <label>
+        <input type="radio" name="q9" value="a"> a) Cypherpunk
+      </label>
+      <label>
+        <input type="radio" name="q9" value="b"> b) Dataísmo
+      </label>
+      <label>
+        <input type="radio" name="q9" value="c"> c) Neo-Luddismo
+      </label>
+      <label>
+        <input type="radio" name="q9" value="d"> d) Anarquismo Digital
+      </label>
+      <label>
+        <input type="radio" name="q9" value="e"> e) Singularidade Tecnológica
+      </label>
+
+      <p>10. Qual corrente filosófica da tecnologia especula sobre o momento em que a inteligência artificial ultrapassará a inteligência humana, resultando em mudanças drásticas na sociedade?</p>
+      <label>
+        <input type="radio" name="q10" value="a"> a) Transhumanismo
+      </label>
+      <label>
+        <input type="radio" name="q10" value="b"> b) Cibernética
+      </label>
+      <label>
+        <input type="radio" name="q10" value="c"> c) Technogaianismo
+      </label>
+      <label>
+        <input type="radio" name="q10" value="d"> d) Singularidade Tecnológica
+      </label>
+      <label>
+        <input type="radio" name="q10" value="e"> e) Cyberpunk</label>
+      <button type="button" onclick="checkAnswers()">Responder</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>Sua Pontuação</h2>
+    <p id="score"></p>
+    <h3>Respostas Corretas</h3>
+    <ul id="correct-answers"></ul>    
+    <button onclick="closeModal()">Fechar</button>
+  </div>
+</div>
+
+<script>
+function loadContent(theme) {
+  const mainContent = document.getElementById('main-content');
+  let content = '';
+
+  switch (theme) {
+    case 'correntes_filosoficas':
+      content += '<h1>Correntes Filosóficas da Tecnologia</h1>';
+      content += '<form id="exercises-form">';
+      content += '<h3>Correntes Filosóficas da Tecnologia</h3>';
+      content += '<p>1. Qual corrente filosófica da tecnologia defende a ideia de que a tecnologia deve ser usada para transcender as limitações humanas e alcançar uma forma superior de existência?</p>';
+      content += '<label><input type="radio" name="q1" value="a"> a) Cyberpunk</label>';
+      content += '<label><input type="radio" name="q1" value="b"> b) Transhumanismo</label>';
+      content += '<label><input type="radio" name="q1" value="c"> c) Tecnofeminismo</label>';
+      content += '<label><input type="radio" name="q1" value="d"> d) Neo-Luddismo</label>';
+      content += '<label><input type="radio" name="q1" value="e"> e) Cibernética</label>';
+      content += '<p>2. Qual corrente filosófica da tecnologia enfatiza a importância da privacidade e da criptografia para proteger as liberdades individuais na era digital?</p>';
+      content += '<label><input type="radio" name="q2" value="a"> a) Cypherpunk</label>';
+      content += '<label><input type="radio" name="q2" value="b"> b) Biohacking</label>';
+      content += '<label><input type="radio" name="q2" value="c"> c) Ludologia (Teoria dos Jogos)</label>';
+      content += '<label><input type="radio" name="q2" value="d"> d) Anarquismo Digital</label>';
+      content += '<label><input type="radio" name="q2" value="e"> e) Technogaianismo</label>';
+      content += '<p>3. Qual corrente filosófica da tecnologia argumenta que a informação é a entidade central na sociedade e na evolução humana, e que devemos buscar maneiras de processá-la de forma eficiente?</p>';
+      content += '<label><input type="radio" name="q3" value="a"> a) Dataísmo</label>';
+      content += '<label><input type="radio" name="q3" value="b"> b) Ludologia (Teoria dos Jogos)</label>';
+      content += '<label><input type="radio" name="q3" value="c"> c) Tecnofeminismo</label>';
+      content += '<label><input type="radio" name="q3" value="d"> d) Cibernética</label>';
+      content += '<label><input type="radio" name="q3" value="e"> e) Singularidade Tecnológica</label>';
+      content += '<p>4. Qual corrente filosófica da tecnologia busca promover a igualdade de gênero e questionar a relação entre gênero e tecnologia?</p>';
+      content += '<label><input type="radio" name="q4" value="a"> a) Cyberpunk</label>';
+      content += '<label><input type="radio" name="q4" value="b"> b) Tecnofeminismo</label>';
+      content += '<label><input type="radio" name="q4" value="c"> c) Anarquismo Digital</label>';
+      content += '<label><input type="radio" name="q4" value="d"> d) Neo-Luddismo</label>';
+      content += '<label><input type="radio" name="q4" value="e"> e) Technogaianismo</label>';
+      content += '<p>5. Qual corrente filosófica da tecnologia se opõe ao avanço descontrolado da tecnologia e defende a preservação de valores humanos tradicionais?</p>';
+      content += '<label><input type="radio" name="q5" value="a"> a) Biohacking</label>';
+      content += '<label><input type="radio" name="q5" value="b"> b) Ludologia (Teoria dos Jogos)</label>';
+      content += '<label><input type="radio" name="q5" value="c"> c) Neo-Luddismo</label>';
+      content += '<label><input type="radio" name="q5" value="d"> d) Technogaianismo</label>';
+      content += '<label><input type="radio" name="q5" value="e"> e) Singularidade Tecnológica</label>';
+      content += '<p>6. Qual corrente filosófica da tecnologia enfatiza a interação entre humanos e máquinas, buscando entender os sistemas complexos de retroalimentação?</p>';
+      content += '<label><input type="radio" name="q6" value="a"> a) Dataísmo</label>';
+      content += '<label><input type="radio" name="q6" value="b"> b) Cibernética</label>';
+      content += '<label><input type="radio" name="q6" value="c"> c) Cypherpunk</label>';
+      content += '<label><input type="radio" name="q6" value="d"> d) Biohacking</label>';
+      content += '<label><input type="radio" name="q6" value="e"> e) Singularidade Tecnológica</label>';
+      content += '<p>7. Qual corrente filosófica da tecnologia defende a fusão entre tecnologia e ecologia, buscando soluções tecnológicas para os problemas ambientais?</p>';
+      content += '<label><input type="radio" name="q7" value="a"> a) Transhumanismo</label>';
+      content += '<label><input type="radio" name="q7" value="b"> b) Tecnofeminismo</label>';
+      content += '<label><input type="radio" name="q7" value="c"> c) Technogaianismo</label>';
+      content += '<label><input type="radio" name="q7" value="d"> d) Ludologia (Teoria dos Jogos)</label>';
+      content += '<label><input type="radio" name="q7" value="e"> e) Anarquismo Digital</label>';
+      content += '<p>8. Qual corrente filosófica da tecnologia enfatiza a importância dos jogos na compreensão da interação humana e na resolução de conflitos?</p>';
+      content += '<label><input type="radio" name="q8" value="a"> a) Cyberpunk</label>';
+      content += '<label><input type="radio" name="q8" value="b"> b) Biohacking</label>';
+      content += '<label><input type="radio" name="q8" value="c"> c) Ludologia (Teoria dos Jogos)</label>';
+      content += '<label><input type="radio" name="q8" value="d"> d) Anarquismo Digital</label>';
+      content += '<label><input type="radio" name="q8" value="e"> e) Singularidade Tecnológica</label>';
+      content += '<p>9. Qual corrente filosófica da tecnologia acredita na criação de sociedades descentralizadas e na autonomia individual por meio da tecnologia?</p>';
+      content += '<label><input type="radio" name="q9" value="a"> a) Cypherpunk</label>';
+      content += '<label><input type="radio" name="q9" value="b"> b) Dataísmo</label>';
+      content += '<label><input type="radio" name="q9" value="c"> c) Neo-Luddismo</label>';
+      content += '<label><input type="radio" name="q9" value="d"> d) Anarquismo Digital</label>';
+      content += '<label><input type="radio" name="q9" value="e"> e) Singularidade Tecnológica</label>';
+      content += '<p>10. Qual corrente filosófica da tecnologia especula sobre o momento em que a inteligência artificial ultrapassará a inteligência humana, resultando em mudanças drásticas na sociedade?</p>';
+      content += '<label><input type="radio" name="q10" value="a"> a) Transhumanismo</label>';
+      content += '<label><input type="radio" name="q10" value="b"> b) Cibernética</label>';
+      content += '<label><input type="radio" name="q10" value="c"> c) Technogaianismo</label>';
+      content += '<label><input type="radio" name="q10" value="d"> d) Singularidade Tecnológica</label>';
+      content += '<label><input type="radio" name="q10" value="e"> e) Cyberpunk</label>';
+      content += '<button type="button" onclick="checkAnswers()">Responder</button>';
+      content += '</form>';
+      break;
+    // Adicione outros cases conforme necessário
+
+    default:
+      content += '<h3>Escolha uma temática</h3>';
+  }
+
+  mainContent.innerHTML = content;
+}
+
+// Função para verificar as respostas
+function checkAnswers() {
+  // Array com as respostas corretas e explicações
+  const correctAnswers = [
+    { answer: 'b', explanation: 'O Transhumanismo é uma corrente filosófica que defende o uso da tecnologia para melhorar as capacidades humanas e transcender as limitações biológicas.' },
+    { answer: 'a', explanation: 'Os Cypherpunks são ativistas que defendem o uso de criptografia forte e outras medidas de privacidade para proteger as liberdades individuais e a privacidade na era digital.' },
+    { answer: 'a', explanation: 'O Dataísmo é uma visão filosófica que coloca a informação no centro da sociedade e argumenta que devemos buscar maneiras de processar e utilizar eficientemente grandes quantidades de dados.' },
+    { answer: 'b', explanation: 'O Tecnofeminismo é uma corrente que busca promover a igualdade de gênero na tecnologia e questionar a relação entre gênero e tecnologia.' },
+    { answer: 'c', explanation: 'O Neo-Luddismo é uma corrente que se opõe ao avanço descontrolado da tecnologia e defende a preservação de valores humanos tradicionais, muitas vezes através de manifestações contra o uso excessivo de tecnologia.' },
+    { answer: 'b', explanation: 'A Cibernética é uma corrente que estuda a interação entre sistemas complexos, como humanos e máquinas, e busca entender os padrões de retroalimentação e controle.' },
+    { answer: 'c', explanation: 'O Technogaianismo é uma corrente que busca integrar tecnologia e ecologia, promovendo soluções tecnológicas para os problemas ambientais e a criação de uma sociedade sustentável.' },
+    { answer: 'c', explanation: 'A Ludologia, ou Teoria dos Jogos, é uma corrente que estuda os jogos como uma forma de entender a interação humana, os conflitos e a tomada de decisões.' },
+    { answer: 'd', explanation: 'O Anarquismo Digital é uma corrente que defende a descentralização do poder e a autonomia individual através da tecnologia, muitas vezes promovendo a criptografia e a descentralização da internet.' },
+    { answer: 'd', explanation: 'A Singularidade Tecnológica é uma especulação sobre o momento em que a inteligência artificial ultrapassará a inteligência humana, levando a mudanças sociais e tecnológicas irreversíveis.' }
+  ];
+
+  // Contador de pontuação
+  let score = 0;
+
+  // Verificar as respostas
+  const studentAnswers = [];
+  for (let i = 1; i <= 10; i++) {
+    const selectedAnswer = document.querySelector(`input[name=q${i}]:checked`);
+    if (selectedAnswer) {
+      studentAnswers.push({ question: i, selected: selectedAnswer.value, correct: correctAnswers[i - 1].answer, explanation: correctAnswers[i - 1].explanation });
+      if (selectedAnswer.value === correctAnswers[i - 1].answer) {
+        score++;
+      }
+    } else {
+      studentAnswers.push({ question: i, selected: null, correct: correctAnswers[i - 1].answer, explanation: correctAnswers[i - 1].explanation });
+    }
+  }
+
+  // Exibir modal com a pontuação e respostas corretas
+  const modal = document.getElementById('modal');
+  const scoreDisplay = document.getElementById('score');
+  const correctAnswersList = document.getElementById('correct-answers');
+
+  scoreDisplay.textContent = `Pontuação: ${score}/10`;
+  
+  // Limpar lista de respostas corretas
+  correctAnswersList.innerHTML = '';
+
+  // Adicionar respostas corretas ao modal
+  studentAnswers.forEach((answer, index) => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `<strong>Questão ${answer.question}:</strong> Sua resposta: ${answer.selected || 'Não respondida'}<br>Resposta correta: ${answer.correct}<br>${answer.explanation}`;
+    correctAnswersList.appendChild(listItem);
+  });
+
+  // Exibir modal
+  modal.style.display = 'block';
+}
+
+// Função para fechar o modal
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.style.display = 'none';
+}
+
+// Função para enviar as respostas ao professor
+function sendAnswers() {
+  // Coletar respostas do aluno
+  const studentAnswers = [];
+  for (let i = 1; i <= 10; i++) {
+    const selectedAnswer = document.querySelector(`input[name=q${i}]:checked`);
+    studentAnswers.push({ question: i, selected: selectedAnswer ? selectedAnswer.value : 'Não respondida' });
+  }
+
+  // Simular envio de respostas ao professor (aqui você pode implementar a lógica real de envio)
+  console.log('Respostas do aluno:', studentAnswers);
+  alert('Respostas enviadas ao professor!');
+}
+
+// Carregar conteúdo inicial
+loadContent('correntes_filosoficas');
+</script>
+
+</body>
+</html>
